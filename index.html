@@ -58,6 +58,7 @@
 	<header>
 		<h1 class="masthead">Time of Day</h1>
 	</header>
+	<h2 id = "greeting">Greeting goes here</h2>
     <main>
 	 <header><h3>A JavaScript Example by Melody Vielma</h3></header>
 	 <p>This is a webpage that uses JavaScript to determine the current hour, 
@@ -73,15 +74,48 @@
 		</ul>
 	</p>	
 	
-	
-	  <img src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
+
+	  <img id = "pic" src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2013, All Rights Reserved ~
+      <small>&copy; 2020 - <span id = "copyright">copyright goes here</span>, All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
     </footer>
-    <!-- END Footer -->
+    <script>
+		let myDate = new Date();
+
+		let myText = '';
+		let myColor = '';
+		let myPic = '';
+
+
+		let myHour = myDate.getHours();
+
+		//LINE BELOW FOR TESTING - REMOVE BEFORE PLACING IN SERVICE
+		myHour = 13;
+
+		if( myHour < 12 ) {
+			myText = "Good Morning!";
+			myColor = "orange";
+			myPic = "images/morning.jpg";
+		}
+		else {
+			myText = "Good Afternoon!";
+			myColor = "green";
+			myPic = "images/afternoon.jpg";
+		}
+
+		//console.log(myText);
+		document.getElementById('greeting').innerHTML = myText;
+		document.getElementById('greeting').style.color = myColor;
+		document.querySelector("html").style.backgroundColor = myColor;
+		document.getElementById('pic').src = myPic;
+
+		let myYear = myDate.getFullYear();
+		document.getElementById('copyright').innerHTML = myYear;
+
+	</script>
 </body>
 </html>
