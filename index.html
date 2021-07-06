@@ -73,6 +73,7 @@
 			<li>Night (11pm to 5am)</li>
 		</ul>
 	</p>	
+	<h2 id = "dayOfWeek">Day of week goes here</h2>
 	
 
 	  <img id = "pic" src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
@@ -92,9 +93,11 @@
 
 
 		let myHour = myDate.getHours();
+		let myDay = myDate.getDay()
 
 		//LINE BELOW FOR TESTING - REMOVE BEFORE PLACING IN SERVICE
 		//myHour = 3;
+		//myDay = 0;
 
 		console.log(myHour);
 
@@ -117,6 +120,30 @@
 			myText = "Good Night!";
 			myColor = "purple";
 			myPic = "images/night.jpg";
+		}
+
+		console.log(myDay);
+
+		if( myDay == 0) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Sunday!";
+		}
+		else if( myDay == 1) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Monday!";
+		}
+		else if( myDay == 2) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Tuesday!";
+		}
+		else if( myDay == 3) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Wednesday!";
+		}
+		else if( myDay == 4) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Thursday!";
+		}
+		else if( myDay == 5) {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Friday!";
+		}
+		else {
+			document.getElementById("dayOfWeek").innerHTML = "Today is Saturday!";
 		}
 
 		//console.log(myText);
